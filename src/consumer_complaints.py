@@ -299,23 +299,23 @@ def main():
     '''Main Routine'''
 
     ###########################################################
-	#  Input files									          #
-	###########################################################
+    #  Input files					      #
+    ###########################################################
     PRODUCT_PATH = sys.argv[1]
     OUTPUT_PATH = sys.argv[2]
 
     # open file and process data
     results_dict = open_file(PRODUCT_PATH)
 
-    ######################################################################################
-    # Generate report: 								                                     #
-	# 		1) product: a list of products in alphabetical order            #
-    #       2) year: a list of years in ascending order                                                   #
-	#		3) num_of_complaints: number of complaints received for the product and year #
-	#		4) num_of_companies: number of unique companies recevices complaints         #
-    #       5) highest_per: highest percentage that company receives complaints          #
-	#											                                         #
-    ######################################################################################
+    ####################################################################################
+    # Generate report: 								       #
+    # 	  1) product: a list of products in alphabetical order                         #
+    #     2) year: a list of years in ascending order                                  #
+    #     3) num_of_complaints: number of complaints received for the product and year #
+    #     4) num_of_companies: number of unique companies recevices complaints         #
+    #     5) highest_per: highest percentage that company receives complaints          #
+    #										       #
+    ####################################################################################
 
     # results_list
     #
