@@ -30,8 +30,11 @@ To run the script, type`sh run.sh`in terminal </br>
 8. Product is empty
 9. Company is empty
 10. Product dictionary is empty
+11. Line items less than header items
+12. Line items larger than header items
 ```
 6. To find the number of companies for the same product and year, we can find the number of unique items in the company list. To find the highest percentage of total complaints against one company, we can find the percentage of one company in the company list, e.g., [A,B,A]-> A:2/3, B:1/3. </br>
-7. When we write the data in output file, we need to add double quotes if there is a comma in product.
+7. Sort results alphabetically and numerically in ascending order using `sorted()`.
+8. When we write the data in output file, we need to add double quotes if there is a comma in product.
 ## Final Words
 Thank you for providing me this opportunity. I would like to learn more and practice more. Let me know what I can improve on this code.
