@@ -186,6 +186,7 @@ def read_csv(file):
             # skip the line
             continue
         else:
+            # validate the date
             if validate(line[idx_date]):
                 # get year
                 year = date_to_year(line[idx_date])
