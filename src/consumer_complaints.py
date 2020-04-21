@@ -6,12 +6,13 @@
 ##
 ## Process number of complaints, number of companies
 ## and highest percentage of total complaints against
-## one company for unique pair of product and year.
-## To handle unexpectd data when we read line by line
-## use print error messgae including line number
-## can help programmer fix data. skip the line and read data
-## deal with a large amount of data no need to exit the program or raise error
-## print line number for that error corner cases
+## one company for the same product and year.
+## To handle unexpectd data in a large amount of dataset
+## when we read line by line, we print error messgaes
+## including line number instead of raising error.
+## This way could help us to find where the error is and fix data.
+## We use edge cases to test the code if it passes rare cases.
+##
 
 import os
 import sys
@@ -65,16 +66,13 @@ def add_to_product_dict(product_dict, product, year, company):
         product_dict[(product,year)] = Product_Record(product,year,company)
 
 def get_num_companies(company_list):
-    """
-    Count the number of unique companies
-    """
+    """Count the number of unique companies"""
+    # use set to remove duplicates
     num_companies = len(set(company_list))
     return int(num_companies)
 
 def get_highest_per(company_list):
-    """
-    Find the highest percentage of company
-    """
+    """Find the highest percentage of company"""
     percentage_list = []
     total = len(company_list)
     for comp in set(company_list):
@@ -83,11 +81,13 @@ def get_highest_per(company_list):
         res = round(val/total*100,0)
         percentage_list.append(res)
 
+    # return the maximum percentage
     return int(max(percentage_list))
 
 def validate(date_string):
     """Check datetime if its formate is YYYY-MM-DD"""
     try:
+        # check if the below statement raises error
         datetime.datetime.strptime(date_string, '%Y-%m-%d')
     except:
         return False
@@ -95,9 +95,8 @@ def validate(date_string):
         return True
 
 def date_to_year(date):
-    """
-    Extract Year from Date
-    """
+    """Extract Year from Date"""
+    # split the date with '-'
     year = [d for d in date.split('-')][0]
     return int(year)
 
@@ -113,9 +112,7 @@ def check_item(attribute, attribute_names):
     return index
 
 def read_csv(file):
-    """
-    Read the csv file and output dictionary
-    """
+    """Read the csv file and output dictionary"""
     # can we check if it is not comma seperated
     # use csv module to read the csv file
     csvreader = csv.reader(file,quotechar='"',delimiter=',')
