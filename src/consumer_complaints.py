@@ -174,6 +174,7 @@ def read_csv(file):
             # skip this line
             continue
 
+        # if line overbound
         if len(line) > len(attribute_names):
             print("Items in Line %i are over bound!\n"%line_count)
             # skip this line
