@@ -330,8 +330,7 @@ def main():
 
     # convert dictionary to list
     for key, value in results_dict.items():
-        # lowercase company_list
-
+		
         # get number of companies
         num_of_companies = get_num_companies(value.company_list)
 
